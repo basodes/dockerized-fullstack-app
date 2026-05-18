@@ -11,7 +11,7 @@ A production-style full stack application built using:
 
 ## Architecture
 
-Frontend → Nginx → Backend API → PostgreSQL
+![Architecture](./images/architecture.png)
 
 ## Tech Stack
 
