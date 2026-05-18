@@ -40,7 +40,7 @@ dockerized-fullstack-app/
 ### Clone Repository
 
 ```bash
-git clone YOUR_REPO_URL
+git clone https://github.com/basodes/dockerized-fullstack-app.git
 cd dockerized-fullstack-app
 ```
 
