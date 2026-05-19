@@ -16,6 +16,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      - name: Create Backend .env File
+        run: |
+          echo "PORT=5000" > backend/.env
+          echo "DB_HOST=postgres-db" >> backend/.env
+          echo "DB_USER=postgres" >> backend/.env
+          echo "DB_PASSWORD=postgres" >> backend/.env
+          echo "DB_NAME=appdb" >> backend/.env
+
       - name: Verify Docker Version
         run: docker --version
 
