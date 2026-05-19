@@ -3,19 +3,19 @@ pipeline {
 
     stages {
 
-        stage('Verify Pipeline') {
+        stage('Build Docker Images') {
             steps {
-                echo 'Jenkins pipeline started successfully'
+                sh 'docker compose build'
             }
         }
 
-        stage('Show Docker Version') {
+        stage('Start Containers') {
             steps {
-                sh 'docker --version'
+                sh 'docker compose up -d'
             }
         }
 
-        stage('Show Docker Containers') {
+        stage('Check Running Containers') {
             steps {
                 sh 'docker ps'
             }
