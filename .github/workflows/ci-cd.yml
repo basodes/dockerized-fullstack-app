@@ -1,0 +1,32 @@
+name: Dockerized Full Stack CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build-and-deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Verify Docker Version
+        run: docker --version
+
+      - name: Verify Docker Compose Version
+        run: docker compose version
+
+      - name: Build Docker Containers
+        run: docker compose build
+
+      - name: Start Docker Containers
+        run: docker compose up -d
+
+      - name: Verify Running Containers
+        run: docker ps
