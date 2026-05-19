@@ -11,13 +11,13 @@ pipeline {
 
         stage('Show Docker Version') {
             steps {
-                bat 'docker --version'
+                sh 'docker --version'
             }
         }
 
         stage('Show Docker Containers') {
             steps {
-                bat 'docker ps'
+                sh 'docker ps'
             }
         }
 
