@@ -1,4 +1,6 @@
-FROM node:20-alpine
+# Frontend Dockerfile
+
+FROM node:20 as build
 
 WORKDIR /app
 
@@ -8,6 +10,10 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 5173
+RUN npm run build
 
-CMD ["npm", "run", "dev", "--", "--host"]
+FROM nginx:alpine
+
+COPY --from=build /app/dist /usr/share/nginx/html
+
+EXPOSE 80

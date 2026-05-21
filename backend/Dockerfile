@@ -1,4 +1,6 @@
-FROM node:20-alpine
+# Backend Dockerfile
+
+FROM node:20
 
 WORKDIR /app
 
